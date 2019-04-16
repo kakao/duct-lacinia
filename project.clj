@@ -1,4 +1,4 @@
-(defproject com.kakao.duct/duct-lacinia "0.1.0"
+(defproject com.kakao.duct/duct-lacinia "0.1.1-SNAPSHOT"
   :description "A Duct module for Lacinia"
   :url "https://github.com/kakao/duct-lacinia"
   :license {:name "Apache 2 License"
