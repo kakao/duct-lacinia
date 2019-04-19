@@ -1,0 +1,40 @@
+{:duct.profile/base
+ {:duct.core/project-ns starwars
+
+  :starwars.resolver.human/get-hero {}
+  :starwars.resolver.droid/get-droid {}}
+
+ :duct.profile/dev   #duct/include "dev"
+ :duct.profile/local #duct/include "local"
+ :duct.profile/prod  {}
+
+ :duct.module/logging {}
+
+ :duct.module/lacinia
+ {:graphiql {:endpoint "/graphiql"}
+  :middleware []
+  :schema {:enums
+           {:episode
+            {:description "The episodes of the original Star Wars trilogy."
+             :values [:NEWHOPE :EMPIRE :JEDI]}}
+
+           :objects
+           {:droid
+            {:fields {:primary_functions {:type (list String)}
+                      :id {:type Int}
+                      :name {:type String}
+                      :appears_in {:type (list :episode)}}}
+
+            :human
+            {:fields {:id {:type Int}
+                      :name {:type String}
+                      :home_planet {:type String}
+                      :appears_in {:type (list :episode)}}}}
+
+           :queries
+           {:hero {:type (non-null :human)
+                   :args {:episode {:type :episode}}
+                   :resolve :human/get-hero}
+            :droid {:type :droid
+                    :args {:id {:type String :default-value "2001"}}
+                    :resolve :droid/get-droid}}}}}
