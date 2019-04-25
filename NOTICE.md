@@ -10,12 +10,18 @@ If you have any questions or concerns, please contact us at [opensource@kakaocor
 
 https://github.com/clojure/clojure
 
+Copyright Rich Hickey.
+
+
 Eclipse Public License 1.0
 
 
  **Duct**
 
 https://github.com/duct-framework/duct
+
+Copyright 2019 James Reeves
+
 
 MIT License
 
@@ -24,12 +30,18 @@ MIT License
 
 https://github.com/duct-framework/server.http.jetty
 
+Copyright 2017 James Reeves
+
+
 Eclipse Public License 2.0
 
 
  **Lacinia**
 
 https://github.com/walmartlabs/lacinia
+
+Copyright 2017-2019 WalmartLabs
+
 
 Apache License 2.0
 
@@ -38,6 +50,9 @@ Apache License 2.0
 
 https://github.com/metosin/muuntaja
 
+Copyright 2016-2018 Metosin Oy
+
+
 Eclipse Public License 2.0
 
 
@@ -45,12 +60,18 @@ Eclipse Public License 2.0
 
 https://github.com/nrepl/nrepl
 
+Copyright 2010-2019 Chas Emerick, Bozhidar Batsov and contributors.
+
+
 Eclipse Public License 1.0
 
 
  **Ring-Graphql-UI**
 
 https://github.com/threatgrid/ring-graphql-ui
+
+Copyright 2015-2016 Cisco Systems
+
 
 Eclipse Public License 1.0
 
@@ -342,7 +363,7 @@ THE ACCOMPANYING PROGRAM IS PROVIDED UNDER THE TERMS OF THIS ECLIPSE PUBLIC LICE
 ``````````
 MIT License
 
-Copyright (c)  
+Copyright (c) <year> <copyright holders>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
@@ -353,3 +374,4 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 
 [opensource_kakaocorp.com]: mailto:opensource@kakaocorp.com
+<!-- Hermes : Legal Notice successful Generated -->
