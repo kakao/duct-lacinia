@@ -13,6 +13,14 @@ To install, add the following to your project `:dependencies`:
 
     [com.kakao.duct/duct-lacinia "0.1.0"]
 
+## Quick start for a new project
+
+Use a Leiningen template:
+
+```
+lein new duct-lacinia myapp
+```
+
 ## Usage
 
 To add this module to your configuration, add the `:duct.module/lacinia` key.
