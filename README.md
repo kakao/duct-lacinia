@@ -11,7 +11,7 @@ to a configuration.
 
 To install, add the following to your project `:dependencies`:
 
-    [com.kakao.duct/duct-lacinia "0.1.0"]
+    [com.kakao.duct/duct-lacinia "0.1.1"]
 
 ## Quick start for a new project
 
@@ -108,7 +108,7 @@ the `:graphiql` key:
 
 ```edn
 {:duct.module/lacinia
- {:graphiql {:endpoint "/mygraphiql"}}}
+ {:graphiql {:endpoint "/mygraphiql" :enable true}}}
 ```
 
 ## License
