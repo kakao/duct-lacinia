@@ -26,7 +26,6 @@
                         #(graphql-ui/wrap-graphiql % {:path (:endpoint graphiql)
                                                       :endpoint path})
                         identity)]
-    (println graphiql)
     (-> not-found-handler
         (wrap-lacinia {:path path
                        :schema schema
