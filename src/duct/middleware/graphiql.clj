@@ -3,7 +3,10 @@
             [ring-graphql-ui.core :refer [wrap-graphiql]]))
 
 (defmethod ig/init-key :duct.middleware/graphiql [_ {:keys [path
-                                                            endpoint]
+                                                            endpoint
+                                                            enable]
                                                      :or {path "/graphiql"
                                                           endpoint "/graphql"}}]
-  #(wrap-graphiql % {:path path :endpoint endpoint}))
+  (if enable
+    #(wrap-graphiql % {:path path :endpoint endpoint})
+    identity))

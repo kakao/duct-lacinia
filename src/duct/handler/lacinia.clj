@@ -4,7 +4,7 @@
             [muuntaja.middleware :as mm]
             [muuntaja.format.cheshire :as mfc]
             [ring.middleware.lacinia :refer [wrap-lacinia]]
-            [ring-graphql-ui.core :refer [wrap-graphiql]]))
+            [ring-graphql-ui.core :as graphql-ui]))
 
 (defn not-found-handler [_]
   {:status 404 :headers {} :body nil})
@@ -21,7 +21,12 @@
   (apply comp (reverse (map apply-middleware-args middleware))))
 
 (defmethod ig/init-key :duct.handler.lacinia/app [_ {:keys [path schema resolvers context graphiql middleware]}]
-  (let [muutaja-options (assoc-in m/default-options [:formats "application/json"] mfc/format)]
+  (let [muutaja-options (assoc-in m/default-options [:formats "application/json"] mfc/format)
+        wrap-graphiql (if (:enable graphiql)
+                        #(graphql-ui/wrap-graphiql % {:path (:endpoint graphiql)
+                                                      :endpoint path})
+                        identity)]
+    (println graphiql)
     (-> not-found-handler
         (wrap-lacinia {:path path
                        :schema schema
@@ -29,5 +34,5 @@
                        :context context})
         mm/wrap-params
         (mm/wrap-format muutaja-options)
-        (wrap-graphiql {:path (:endpoint graphiql) :endpoint path})
+        wrap-graphiql
         ((comp-middleware middleware)))))

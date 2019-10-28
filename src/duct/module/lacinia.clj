@@ -53,7 +53,8 @@
           middleware)))
 
 (defn- lacinia-config [config {:keys [path graphiql schema middleware]
-                               :or {path "/graphql" graphiql {:endpoint "/graphiql"}}}]
+                               :or {path "/graphql" graphiql {:endpoint "/graphiql"
+                                                              :enable true}}}]
   (let [project-ns (:duct.core/project-ns config)]
     {:duct.handler.lacinia/app {:path path
                                 :graphiql graphiql
