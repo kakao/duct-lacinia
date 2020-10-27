@@ -14,7 +14,7 @@
     (let [config {:duct.module/lacinia {}}]
       (is (= {:duct.handler.lacinia/app
               {:path "/graphql"
-               :graphiql {:endpoint "/graphiql"}
+               :graphiql {:enable true :endpoint "/graphiql"}
                :schema nil
                :context {}
                :resolvers {}
@@ -44,4 +44,3 @@
              (-> (core/build-config config)
                  :duct.handler.lacinia/app
                  :middleware))))))
-
